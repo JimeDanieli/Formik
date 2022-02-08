@@ -17,7 +17,9 @@ function App() {
 
         if(!values.name){
         errors.name='Required'
-        }  
+        }  else if (values.name.length < 3){
+          errors.name='Name is too short'
+        }
         if(!values.lastname){
           errors.lastname='Last name is required'
         }
