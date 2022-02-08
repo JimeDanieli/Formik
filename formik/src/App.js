@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { useFormik } from 'formik';
 import './App.css';
-
+//useFormik recibe como argumento un objeto y con ese objeto nosotros podemos indicar varios parametros de configuracion
+//el primero que le queremos pasar son los valores iniciales, en vez de useState, vamos a usar initialValues, que contiene otro objeto literal que va a contener los valores de los campos de nuestros formularios y estos van acompañados de los nombres de los formularios como su llave
+//onSubmit recibe los valores que tiene nuestro formulario
 function App() {
+  const formik= useFormik({
+    initialValues:{
+      name:'',
+      lastname:'',
+      email:'',
+    },
+    onSubmit: values=> console.log(values)
+  })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
     </div>
   );
 }
